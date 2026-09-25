@@ -65,13 +65,13 @@ export default function ServicesSection({ onOpenBooking }) {
           </div>
 
           {/* Calculator Trigger Button */}
-          <button
+          {/* <button
             onClick={() => setShowCalculator(!showCalculator)}
             className="px-5 py-3 rounded-2xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-md shrink-0"
           >
             <Calculator className="w-4 h-4 text-amber-600" />
             <span>{showCalculator ? 'Tutup Kalkulator' : 'Kalkulator Simulasi Biaya & Cicilan'}</span>
-          </button>
+          </button> */}
         </div>
 
         {/* Interactive Treatment Calculator Panel */}

@@ -73,7 +73,7 @@ export default function DoctorsSection({ onOpenBooking }) {
               </div>
 
               {/* Action Button */}
-              <div className="p-5 pt-0">
+              {/* <div className="p-5 pt-0">
                 <button
                   onClick={() => onOpenBooking(null, doc.id)}
                   className="w-full py-2.5 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-teal-600 hover:text-white border border-slate-200 hover:border-teal-500 rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5"
@@ -81,7 +81,7 @@ export default function DoctorsSection({ onOpenBooking }) {
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Buat Janji drg. {doc.name.split(' ')[1]}</span>
                 </button>
-              </div>
+              </div> */}
 
             </div>
           ))}

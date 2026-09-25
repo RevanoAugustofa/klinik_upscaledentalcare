@@ -72,7 +72,7 @@ export default function Footer({ onOpenBooking }) {
             <ul className="space-y-2 text-xs">
               <li><Link to="/" className="hover:text-teal-300 transition-colors">Beranda</Link></li>
               <li><Link to="/about" className="hover:text-teal-300 transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="hover:text-teal-300 transition-colors">Layanan Spesialis</Link></li>
+              <li><Link to="/services" className="hover:text-teal-300 transition-colors">Layanan</Link></li>
               <li><Link to="/doctors" className="hover:text-teal-300 transition-colors">Dokter Tim</Link></li>
               <li><Link to="/gallery" className="hover:text-teal-300 transition-colors">Before &amp; After</Link></li>
               <li><Link to="/promos" className="hover:text-teal-300 transition-colors">Promo Terbaru</Link></li>
@@ -81,13 +81,13 @@ export default function Footer({ onOpenBooking }) {
 
           {/* Treatments */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Layanan Terfavorit</h4>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">Layanan</h4>
             <ul className="space-y-2 text-xs">
-              <li><button onClick={() => onOpenBooking('behel')} className="hover:text-teal-300 text-left">Behel Ortodonti Spesialis</button></li>
-              <li><button onClick={() => onOpenBooking('veneer')} className="hover:text-teal-300 text-left">Porcelain Veneer Hollywood</button></li>
-              <li><button onClick={() => onOpenBooking('bleaching')} className="hover:text-teal-300 text-left">Teeth Whitening Laser</button></li>
-              <li><button onClick={() => onOpenBooking('implant')} className="hover:text-teal-300 text-left">Dental Implant &amp; Crown</button></li>
-              <li><button onClick={() => onOpenBooking('anak')} className="hover:text-teal-300 text-left">Klinik Gigi Anak (Ramah)</button></li>
+              <li><button onClick={() => onOpenBooking('behel')} className="hover:text-teal-300 text-left">Behel Gigi</button></li>
+              <li><button onClick={() => onOpenBooking('veneer')} className="hover:text-teal-300 text-left">Veneer Gigi</button></li>
+              <li><button onClick={() => onOpenBooking('bleaching')} className="hover:text-teal-300 text-left">Bleaching Gigi</button></li>
+              <li><button onClick={() => onOpenBooking('implant')} className="hover:text-teal-300 text-left">Implant &amp; Crown</button></li>
+              <li><button onClick={() => onOpenBooking('anak')} className="hover:text-teal-300 text-left">Perawatan Gigi Anak</button></li>
             </ul>
           </div>
 
@@ -141,7 +141,7 @@ export default function Footer({ onOpenBooking }) {
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
           <p>© {new Date().getFullYear()} Upscale Dental Care Specialist Cilacap. All rights reserved.</p>
           <div className="flex items-center gap-1 text-slate-400">
-            <span>Didesain khusus untuk kesehatan senyum Cilacap</span>
+            <span>Didesain khusus untuk kesehatan senyum</span>
             <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />
           </div>
         </div>

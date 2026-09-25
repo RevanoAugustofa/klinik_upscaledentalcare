@@ -154,7 +154,7 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
                       </div>
                       <div>
                         <p className="text-xs font-bold text-slate-900 group-hover:text-teal-800 transition-colors">
-                          About Us (Tentang Kami)
+                          Tentang Klinik
                         </p>
                         <p className="text-[10px] text-slate-500">
                           Profil, Visi Misi &amp; Standar Medis
@@ -204,7 +204,7 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
           </nav>
 
           {/* CTA Buttons */}
-          <div className="hidden sm:flex items-center space-x-3">
+          {/* <div className="hidden sm:flex items-center space-x-3">
             <button
               onClick={onOpenBooking}
               className="px-4 py-2.5 text-xs font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 rounded-xl shadow-md shadow-teal-600/20 transition-all flex items-center gap-2 active:scale-95"
@@ -212,17 +212,17 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
               <Calendar className="w-4 h-4" />
               Buat Janji Online
             </button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-2 lg:hidden">
-            <button
+            {/* <button
               onClick={onOpenBooking}
               className="sm:hidden px-3 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg shadow flex items-center gap-1"
             >
               <Calendar className="w-3.5 h-3.5" />
               Reservasi
-            </button>
+            </button> */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none"
@@ -293,7 +293,7 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
               ))}
             </div>
 
-            <div className="pt-3 border-t border-slate-200 flex flex-col gap-2.5">
+            {/* <div className="pt-3 border-t border-slate-200 flex flex-col gap-2.5">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
@@ -304,7 +304,7 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
                 <Calendar className="w-4 h-4" />
                 Buat Janji Konsultasi Online
               </button>
-            </div>
+            </div> */}
           </div>
         )}
       </header>
