@@ -141,7 +141,7 @@ export default function Footer({ onOpenBooking }) {
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
           <p>© {new Date().getFullYear()} Upscale Dental Care Specialist Cilacap. All rights reserved.</p>
           <div className="flex items-center gap-1 text-slate-400">
-            <span>Didesain khusus untuk kesehatan senyum</span>
+            <span>Didesain untuk kesehatan senyuman</span>
             <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />
           </div>
         </div>
