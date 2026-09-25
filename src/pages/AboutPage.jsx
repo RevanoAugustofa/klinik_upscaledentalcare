@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import { Sparkles, ShieldCheck, Award, MapPin, Users, HeartHandshake, Calendar, CheckCircle2, Clock } from 'lucide-react';
 import FaqSection from '../components/FaqSection';
 import { clinicData } from '../data/clinicData';
@@ -6,6 +7,12 @@ import { clinicData } from '../data/clinicData';
 export default function AboutPage({ onOpenBooking }) {
   return (
     <div className="animate-in fade-in duration-300">
+      <SEO 
+        title="Tentang Kami | Upscale Dental Care Specialist Cilacap"
+        description="Profil Klinik Upscale Dental Care Cilacap. Komitmen standar kedokteran gigi spesialis berteknologi presisi, sterilisasi 100%, serta pelayanan ramah VVIP di Cilacap."
+        canonical="/about"
+        keywords="tentang upscale dental care, profil dokter gigi cilacap, fasilitas klinik gigi cilacap"
+      />
       
       {/* Page Banner Header */}
       <section className="bg-gradient-to-b from-teal-50 via-slate-50 to-white py-14 border-b border-slate-200 text-center relative overflow-hidden">

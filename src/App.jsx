@@ -46,7 +46,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-teal-500 selection:text-white flex flex-col justify-between">
         
@@ -118,7 +118,7 @@ function App() {
           onOpenBooking={handleOpenBooking}
         />
       </div>
-    </Router>
+    </>
   );
 }
 
