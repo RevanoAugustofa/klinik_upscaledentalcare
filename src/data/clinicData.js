@@ -8,12 +8,12 @@ export const clinicData = {
   formattedWhatsapp: "+62 811-6469-191",
   socials: {
     instagram: {
-      handle: "@upscaledental.cilacap",
-      url: "https://instagram.com/upscaledental.cilacap"
+      handle: "@upscale.dentalcare",
+      url: "https://instagram.com/upscale.dentalcare"
     },
     tiktok: {
-      handle: "@upscaledental.cilacap",
-      url: "https://tiktok.com/@upscaledental.cilacap"
+      handle: "@upscale.dentalcare",
+      url: "https://tiktok.com/@upscale.dentalcare"
     }
   },
   googleRating: 4.9,

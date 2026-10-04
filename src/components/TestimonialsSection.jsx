@@ -9,10 +9,6 @@ export default function TestimonialsSection() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider">
-            <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-            Ulasan Pengunjung & Pasien
-          </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Apa Kata Mereka Tentang <br />
             <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">

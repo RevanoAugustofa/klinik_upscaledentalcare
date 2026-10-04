@@ -28,16 +28,17 @@ export default function Hero({ onOpenBooking, onOpenQuiz }) {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-              Wujudkan Senyum <br />
-              <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-amber-600 bg-clip-text text-transparent">
-                Indah, Rapi & Sehat
-              </span> <br />
-              Bersama Dokter Spesialis
+              
+              <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-cyan-500 bg-clip-text text-transparent">
+                Wujudkan Senyum
+                Indah & Sehat
+                Bersama Dokter Spesialis
+              </span>
             </h1>
 
             {/* Subtitle / Description */}
             <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-              <strong className="text-slate-900 font-semibold">Upscale Dental Care Specialist Cilacap</strong> menghadirkan perawatan estetika & kesehatan gigi kualitas terbaik. Didukung oleh tim dokter spesialis (Ortodonti, Konservasi Gigi, Bedah Mulut, & Anak) dengan teknologi 3D Eropa modern tanpa rasa sakit.
+              <strong className="text-slate-900 font-semibold">Upscale Dental Care Specialist</strong> menghadirkan perawatan gigi berkualitas dengan dukungan tim dokter spesialis untuk kesehatan dan senyum terbaik Anda.
             </p>
 
             {/* Highlighted Feature Chips */}

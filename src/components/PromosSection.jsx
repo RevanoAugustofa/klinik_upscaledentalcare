@@ -42,22 +42,6 @@ export default function PromosSection({ onOpenBooking }) {
               Dapatkan potongan harga khusus, bonus konsultasi gratis, dan cicilan 0% untuk paket perawatan terbaik Anda.
             </p>
           </div>
-
-          {/* Countdown Clock Box */}
-          <div className="bg-amber-50/80 border border-amber-300 p-4 rounded-2xl flex items-center gap-4 shrink-0 shadow-md">
-            <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center border border-amber-300">
-              <Clock className="w-5 h-5 text-amber-700 animate-pulse" />
-            </div>
-            <div>
-              <span className="text-[10px] font-bold text-amber-900 uppercase tracking-wider block">Promo Berakhir Dalam:</span>
-              <div className="flex items-center gap-1.5 text-sm font-black text-slate-900">
-                <span className="bg-white px-2 py-0.5 rounded border border-amber-200 text-amber-700">{timeLeft.days}h</span> :
-                <span className="bg-white px-2 py-0.5 rounded border border-amber-200">{timeLeft.hours}j</span> :
-                <span className="bg-white px-2 py-0.5 rounded border border-amber-200">{timeLeft.minutes}m</span> :
-                <span className="bg-white px-2 py-0.5 rounded border border-amber-200 text-teal-700">{timeLeft.seconds}d</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Promo Cards Grid */}

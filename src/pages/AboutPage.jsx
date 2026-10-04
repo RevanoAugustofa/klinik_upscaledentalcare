@@ -17,16 +17,9 @@ export default function AboutPage({ onOpenBooking }) {
       {/* Page Banner Header */}
       <section className="bg-gradient-to-b from-teal-50 via-slate-50 to-white py-14 border-b border-slate-200 text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-teal-600" />
-            Profil &amp; Filosofi Klinik
-          </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
             Tentang <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Upscale Dental Care Specialist</span>
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
-            Pelajari komitmen standar kedokteran gigi spesialis berteknologi presisi, sterilisasi 100%, serta pelayanan ramah sekelas VVIP di Kabupaten Cilacap.
-          </p>
         </div>
       </section>
 

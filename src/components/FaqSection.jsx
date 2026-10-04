@@ -17,16 +17,13 @@ export default function FaqSection() {
         
         {/* Header */}
         <div className="text-center space-y-3 mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider">
-            <HelpCircle className="w-3.5 h-3.5 text-teal-600" />
-            Pertanyaan Umum
-          </div>
+          
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">FAQ</span>
+            <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Pertanyaan Umum</span>
           </h2>
-          <p className="text-slate-600 text-sm">
+          {/* <p className="text-slate-600 text-sm">
             Temukan jawaban cepat seputar reservasi, prosedur tindakan medis, dan fasilitas pembayaran.
-          </p>
+          </p> */}
         </div>
 
         {/* Search Bar */}
