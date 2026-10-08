@@ -1,109 +1,209 @@
-import React from 'react';
-import { Calendar, ShieldCheck, Star, Sparkles, PhoneCall, ChevronRight, Award, CheckCircle2, ArrowUpRight } from
-'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { PhoneCall, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { clinicData } from '../data/clinicData';
 
+// ============================================================
+// 🖼️  GANTI GAMBAR-GAMBAR CAROUSEL DI SINI
+//     Cukup ubah array `carouselImages` berikut:
+//     - src  : URL gambar (bisa path lokal seperti /images/foto1.jpg
+//              atau URL eksternal)
+//     - alt  : deskripsi gambar (untuk SEO & aksesibilitas)
+// ============================================================
+const carouselImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80',
+    alt: 'Ruang Perawatan Upscale Dental Care Cilacap',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1588776814546-1ffbb172b07e?auto=format&fit=crop&w=1000&q=80',
+    alt: 'Peralatan Modern Klinik Gigi Upscale Dental Care',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e66?auto=format&fit=crop&w=1000&q=80',
+    alt: 'Tim Dokter Spesialis Upscale Dental Care',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1598256989075-5f0ae3c4e6c6?auto=format&fit=crop&w=1000&q=80',
+    alt: 'Ruang Tunggu Nyaman Klinik Gigi Upscale',
+  },
+];
+
+const AUTOPLAY_INTERVAL = 4000; // ms — ubah jika mau lebih lambat/cepat
+
 export default function Hero({ onOpenBooking, onOpenQuiz }) {
-return (
-<section id="hero"
-  className="relative min-h-[85vh] flex items-center justify-center pt-8 pb-16 overflow-hidden bg-gradient-to-b from-teal-50/60 via-slate-50 to-white">
-  {/* Background Decorative Glow Effects */}
-  <div
-    className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-teal-200/40 blur-[140px] rounded-full pointer-events-none" />
-  <div
-    className="absolute bottom-10 right-10 w-[400px] h-[300px] bg-cyan-200/30 blur-[120px] rounded-full pointer-events-none" />
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+  const total = carouselImages.length;
 
-      {/* Left Column: Text & Call To Actions */}
-      <div className="lg:col-span-7 space-y-6 text-left">
-      
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % total);
+  }, [total]);
 
-        {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+  const prev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + total) % total);
+  }, [total]);
 
-          <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-cyan-500 bg-clip-text text-transparent">
-            Wujudkan Senyum
-            Indah & Sehat
-            Bersama Dokter Spesialis
-          </span>
-        </h1>
+  // Auto-play
+  useEffect(() => {
+    if (paused) return;
+    const timer = setInterval(next, AUTOPLAY_INTERVAL);
+    return () => clearInterval(timer);
+  }, [next, paused]);
 
-        {/* Subtitle / Description */}
-        <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
-          <strong className="text-slate-900 font-semibold">Upscale Dental Care Specialist</strong> menghadirkan
-          perawatan gigi berkualitas dengan dukungan tim dokter spesialis untuk kesehatan dan senyum terbaik Anda.
-        </p>
+  return (
+    <section id="hero"
+      className="relative bg-white border-b border-slate-100 pt-10 pb-16 overflow-hidden">
 
-        {/* Highlighted Feature Chips */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-1">
-          <div
-            className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 shadow-xs">
-            <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-            <span>Dokter Spesialis Sp.Ort & Sp.KG</span>
-          </div>
-          <div
-            className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 shadow-xs">
-            <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
-            <span>Peralatan Steril 100%</span>
-          </div>
-        </div>
+      {/* Subtle background accents */}
+      <div className="absolute top-0 right-0 w-[480px] h-[480px] bg-teal-50 rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[320px] h-[320px] bg-cyan-50/60 rounded-full translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
-        {/* CTAs Button Group */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-          {/* <button onClick={onOpenBooking}
-            className="px-7 py-4 text-base font-bold text-white bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-700 hover:from-teal-500 hover:to-cyan-500 rounded-2xl shadow-xl shadow-teal-600/25 hover:shadow-teal-600/40 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-0.5">
-            <Calendar className="w-5 h-5" />
-            <span>Buat Janji Reservasi Online</span>
-            <ChevronRight className="w-4 h-4" />
-          </button> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          <a href={`https://wa.me/${clinicData.whatsappNumber}?text=Halo%20Upscale%20Dental%20Care%20Cilacap,%20saya%20ingin%20konsultasi%20perawatan%20gigi`}
-            target="_blank" rel="noopener noreferrer"
-            className="px-6 py-4 text-sm font-bold text-slate-700 bg-white hover:bg-slate-100 border border-slate-200 rounded-2xl transition-all flex items-center justify-center gap-2.5 shadow-sm">
-            <PhoneCall className="w-4 h-4 text-teal-600" />
-            <span>Chat WhatsApp Admin</span>
-          </a>
-        </div>
+          {/* ── Left Column ── */}
+          <div className="lg:col-span-6 space-y-7 text-left">
 
-        {/* Quick Stats Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-200">
-          {clinicData.stats.map((stat, idx) => (
-          <div key={idx} className="space-y-0.5">
-            <p className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-              {stat.value}
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-teal-50 border border-teal-200 rounded-full text-[11px] font-bold text-teal-700 uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
+              Klinik Dokter Gigi Spesialis — Cilacap &amp; Purwokerto
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[52px] font-extrabold text-slate-900 tracking-tight leading-[1.12]">
+              <span className="text-teal-600">Wujudkan Senyum
+              Indah &amp; Sehat
+              Bersama Dokter Spesialis</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-base sm:text-lg text-slate-500 leading-relaxed max-w-lg">
+              <strong className="text-slate-700 font-semibold">Upscale Dental Care Specialist</strong> menghadirkan
+              perawatan gigi berkualitas dengan dukungan tim dokter spesialis untuk kesehatan dan senyum terbaik Anda.
             </p>
-            <p className="text-xs font-bold text-teal-700">
-              {stat.label}
-            </p>
-            <p className="text-[11px] text-slate-500">
-              {stat.subtext}
-            </p>
+
+            {/* Feature Chips */}
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                'Dokter Spesialis Sp.Ort & Sp.KG',
+                'Peralatan Steril 100%',
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-2 px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold text-slate-700"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <a
+                href={`https://wa.me/${clinicData.whatsappNumber}?text=Halo%20Upscale%20Dental%20Care%20Cilacap,%20saya%20ingin%20konsultasi%20perawatan%20gigi`}
+                target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold rounded-lg transition-colors shadow-sm shadow-teal-600/20"
+              >
+                <PhoneCall className="w-4 h-4" />
+                <span>Chat WhatsApp Admin</span>
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-700 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 rounded-lg transition-colors"
+              >
+                Lihat Layanan Kami
+              </a>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 pt-5 border-t border-slate-100">
+              {clinicData.stats.map((stat, idx) => (
+                <div key={idx}>
+                  <p className="text-2xl sm:text-3xl font-black text-teal-700 tracking-tight">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs font-bold text-slate-800 mt-0.5">
+                    {stat.label}
+                  </p>
+                  <p className="text-[11px] text-slate-400 mt-0.5">
+                    {stat.subtext}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-          ))}
+
+          {/* ── Right Column: Carousel ── */}
+          <div className="lg:col-span-6 relative">
+            <div
+              className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+
+              {/* ── Slide Images ── */}
+              <div className="relative w-full h-[360px] sm:h-[440px]">
+                {carouselImages.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img.src}
+                    alt={img.alt}
+                    className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ${
+                      idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Gradient overlay bottom */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-transparent to-transparent z-20 pointer-events-none" />
+
+              {/* ── Prev / Next Buttons ── */}
+              <button
+                onClick={prev}
+                aria-label="Gambar sebelumnya"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-700 flex items-center justify-center shadow-md transition-all hover:scale-105 active:scale-95"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={next}
+                aria-label="Gambar berikutnya"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-30 w-9 h-9 rounded-full bg-white/90 hover:bg-white text-slate-700 flex items-center justify-center shadow-md transition-all hover:scale-105 active:scale-95"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* ── Dot Indicators ── */}
+              <div className="absolute bottom-14 left-0 right-0 z-30 flex justify-center gap-2">
+                {carouselImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrent(idx)}
+                    aria-label={`Slide ${idx + 1}`}
+                    className={`transition-all duration-300 rounded-full ${
+                      idx === current
+                        ? 'w-6 h-2 bg-white'
+                        : 'w-2 h-2 bg-white/50 hover:bg-white/75'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Slide counter (opsional, di luar frame) */}
+            <div className="flex justify-center mt-3 gap-1 text-[11px] text-slate-400 font-medium">
+              <span className="text-slate-700 font-bold">{current + 1}</span>
+              <span>/</span>
+              <span>{total}</span>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      {/* Right Column: Hero Visual Showcase */}
-      <div className="lg:col-span-5 relative">
-        {/* Glowing Accent Ring */}
-        {/* <div
-          className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-teal-400 to-cyan-400 opacity-30 blur-xl"></div>
-        */}
-
-        <div className="relative rounded-3xl overflow-hidden border border-slate-100 bg-white shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80"
-            alt="Upscale Dental Care Specialist Clinic Cilacap"
-            className="w-full h-[380px] sm:h-[440px] object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent"></div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-);
+    </section>
+  );
 }

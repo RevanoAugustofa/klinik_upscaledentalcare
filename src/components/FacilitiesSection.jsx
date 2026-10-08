@@ -4,22 +4,20 @@ import { clinicData } from '../data/clinicData';
 
 export default function FacilitiesSection() {
   return (
-    <section id="facilities" className="py-20 bg-slate-50 relative border-t border-slate-200">
+    <section id="facilities" className="py-20 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 border border-teal-200 text-teal-800 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-teal-600" />
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="section-label mb-4">
+            <Sparkles className="w-3.5 h-3.5" />
             Standard Kenyamanan VVIP
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Fasilitas Klinik Modern & <br />
-            <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-              Ruangan Berstandar Medis Tinggi
-            </span>
+            Fasilitas Klinik Modern &{' '}
+            <span className="text-teal-600">Ruangan Berstandar Medis Tinggi</span>
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base">
+          <p className="text-slate-500 text-sm sm:text-base mt-4 leading-relaxed">
             Dirancang khusus untuk menghapus kesan menakutkan dari klinik gigi biasa. Nikmati kenyamanan sekelas hotel bintang lima di Cilacap.
           </p>
         </div>
@@ -29,21 +27,21 @@ export default function FacilitiesSection() {
           {clinicData.facilities.map((fac, idx) => (
             <div
               key={idx}
-              className="rounded-3xl bg-white border border-slate-200 overflow-hidden hover:border-teal-400 transition-all duration-300 group shadow-md hover:shadow-xl text-left"
+              className="clinic-card group overflow-hidden text-left"
             >
-              <div className="relative h-52 overflow-hidden bg-slate-100">
+              <div className="relative h-48 overflow-hidden bg-slate-100">
                 <img
                   src={fac.image}
                   alt={fac.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
               </div>
-              <div className="p-6 space-y-2">
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-teal-700 transition-colors">
+              <div className="p-5">
+                <h3 className="text-base font-bold text-slate-900 group-hover:text-teal-700 transition-colors mb-1.5">
                   {fac.title}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-500 leading-relaxed">
                   {fac.description}
                 </p>
               </div>
