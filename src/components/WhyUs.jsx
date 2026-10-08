@@ -17,7 +17,7 @@ export default function WhyUs({ onOpenBooking }) {
     },
     {
       icon: ShieldCheck,
-      title: "Jaminan 100% Steril Standard Eropa",
+      title: "Jaminan 100% Steril",
       description: "Proses sterilisasi alat medis melewati 5 tahap Autoclave Class B untuk menjamin kebersihan 100% bebas risiko infeksi silang.",
       color: "from-emerald-500 to-teal-500"
     },

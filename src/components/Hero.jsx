@@ -18,18 +18,7 @@ return (
 
       {/* Left Column: Text & Call To Actions */}
       <div className="lg:col-span-7 space-y-6 text-left">
-        {/* Top Pill Badge */}
-        <div
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-teal-200 shadow-sm">
-          <span className="flex h-2 w-2 rounded-full bg-teal-500 animate-ping" />
-          <span className="text-xs font-bold text-teal-800 tracking-wide uppercase">
-            Klinik Dokter Gigi Spesialis
-          </span>
-          <span className="text-xs text-slate-300">|</span>
-          <span className="text-xs text-amber-700 font-bold flex items-center gap-1">
-            ★ 4.9 Rating Google
-          </span>
-        </div>
+      
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">

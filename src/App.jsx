@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import FloatingWhatsapp from './components/FloatingWhatsapp';
 import BookingModal from './components/BookingModal';
 import SmileQuizModal from './components/SmileQuizModal';
 import AboutModal from './components/AboutModal';
@@ -107,8 +106,6 @@ function App() {
         {/* Persistent Footer */}
         <Footer onOpenBooking={handleOpenBooking} />
 
-        {/* Sticky WhatsApp Floating Widget */}
-        <FloatingWhatsapp onOpenBooking={() => handleOpenBooking()} />
 
         {/* Interactive Modals */}
         <BookingModal

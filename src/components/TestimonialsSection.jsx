@@ -15,9 +15,9 @@ export default function TestimonialsSection() {
           
           
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Pengalaman &amp; Ulasan Pasien <br />
+            Testimoni 
             <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
-              Ulasan Asli Google Maps
+               Pasien Klinik Gigi
             </span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base">
