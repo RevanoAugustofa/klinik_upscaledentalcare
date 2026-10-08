@@ -15,6 +15,7 @@ import ServicesPage from './pages/ServicesPage';
 import DoctorsPage from './pages/DoctorsPage';
 import GalleryPage from './pages/GalleryPage';
 import PromosPage from './pages/PromosPage';
+import BranchDetailPage from './pages/BranchDetailPage';
 
 function App() {
   const [bookingState, setBookingState] = useState({
@@ -85,8 +86,20 @@ function App() {
               element={<GalleryPage onOpenBooking={handleOpenBooking} />}
             />
             <Route
-              path="/promos"
+              path="/services/promos"
               element={<PromosPage onOpenBooking={handleOpenBooking} />}
+            />
+            <Route
+              path="/cabang-cilacap"
+              element={<BranchDetailPage onOpenBooking={handleOpenBooking} />}
+            />
+            <Route
+              path="/cabang-purwokerto"
+              element={<BranchDetailPage onOpenBooking={handleOpenBooking} />}
+            />
+            <Route
+              path="/:branchId"
+              element={<BranchDetailPage onOpenBooking={handleOpenBooking} />}
             />
           </Routes>
         </main>

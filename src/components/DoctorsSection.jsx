@@ -87,25 +87,7 @@ export default function DoctorsSection({ onOpenBooking }) {
           ))}
         </div>
 
-        {/* Banner Consultation Guarantee */}
-        <div className="mt-12 p-6 rounded-3xl bg-white border border-slate-200 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 text-left">
-          <div className="space-y-1">
-            <h4 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-teal-600" />
-              Butuh Rujukan Kasus Gigi Khusus Atau Second Opinion?
-            </h4>
-            <p className="text-xs text-slate-600">
-              Tim dokter spesialis kami siap mendiskusikan rencana perawatan (treatment plan) yang paling efisien dan tepat untuk kebutuhan estetika maupun kesehatan gigi Anda.
-            </p>
-          </div>
-          <button
-            onClick={() => onOpenBooking()}
-            className="px-6 py-3 text-xs font-bold text-slate-900 bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-md shrink-0 flex items-center gap-1"
-          >
-            <span>Jadwalkan Konsultasi</span>
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
+       
 
       </div>
     </section>

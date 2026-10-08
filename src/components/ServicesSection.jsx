@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2, Clock, Calendar, Calculator, Info, ArrowRight, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Sparkles, CheckCircle2, Clock, Calendar, Calculator, Info, ArrowRight, X, Tag } from 'lucide-react';
 import { clinicData } from '../data/clinicData';
 
 export default function ServicesSection({ onOpenBooking }) {
@@ -54,9 +55,19 @@ export default function ServicesSection({ onOpenBooking }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3 max-w-2xl text-left">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Layanan Perawatan Gigi <br />
-              <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-                Komprehensif & Bergaransi
+              <span>Layanan Perawatan Gigi</span> <br />
+              <span className="inline-flex flex-wrap items-center gap-3 mt-1">
+                <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+                  Komprehensif &amp; Bergaransi
+                </span>
+                <Link
+                  to="/services/promos"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white text-xs sm:text-sm font-extrabold rounded-full shadow-md shadow-rose-500/20 transition-all hover:scale-105 active:scale-95 align-middle"
+                >
+                  <Tag className="w-3.5 h-3.5 text-amber-200 fill-amber-200" />
+                  <span>Promo Spesial</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
@@ -261,10 +272,7 @@ export default function ServicesSection({ onOpenBooking }) {
 
               {/* Card Footer Price & Action */}
               <div className="p-6 pt-0 border-t border-slate-100 mt-4 flex items-center justify-between gap-4">
-                <div>
-                  <span className="text-[10px] uppercase font-bold text-slate-500 block">Mulai Dari:</span>
-                  <span className="text-lg font-black text-amber-600">{service.priceStart}</span>
-                </div>
+                
 
                 <div className="flex gap-2">
                   <button
@@ -325,10 +333,10 @@ export default function ServicesSection({ onOpenBooking }) {
               </div>
 
               <div className="flex items-center justify-between pt-2">
-                <div>
+                {/* <div>
                   <span className="text-[11px] text-slate-500 block">Investasi Mulai Dari:</span>
                   <span className="text-xl font-black text-amber-600">{selectedServiceDetail.priceStart}</span>
-                </div>
+                </div> */}
                 <button
                   onClick={() => {
                     const id = selectedServiceDetail.id;

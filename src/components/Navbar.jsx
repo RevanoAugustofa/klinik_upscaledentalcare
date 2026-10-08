@@ -34,42 +34,14 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
 
   const mainNavLinks = [
     { name: 'Tentang', path: '/about' },
-    { name: 'Layanan & Spesialis', path: '/services' },
+    { name: 'Layanan', path: '/services' },
     { name: 'Dokter Spesialis', path: '/doctors' },
     { name: 'Before & After', path: '/gallery' },
-    { name: 'Promo', path: '/promos' },
   ];
 
   return (
     <>
-      {/* Top Bar Info */}
-      <div className="bg-slate-100 text-slate-700 text-xs py-2 px-4 border-b border-slate-200 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 text-slate-600">
-              <MapPin className="w-3.5 h-3.5 text-teal-600" />
-              Jl. DI Panjaitan No.23, Donan, Cilacap Tengah
-            </span>
-            <span className="flex items-center gap-1.5 text-slate-600">
-              <Clock className="w-3.5 h-3.5 text-teal-600" />
-              Senin - Sabtu: 09.00 - 21.00 WIB
-            </span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <span className="inline-flex items-center gap-1 text-amber-700 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
-              ★ {clinicData.googleRating} Google Rating ({clinicData.googleReviewCount}+ Ulasan)
-            </span>
-            <a 
-              href={`tel:${clinicData.phone}`}
-              className="flex items-center gap-1.5 text-teal-700 hover:text-teal-800 transition-colors font-bold"
-            >
-              <Phone className="w-3.5 h-3.5" />
-              {clinicData.phone}
-            </a>
-          </div>
-        </div>
-      </div>
-
+  
       {/* Main Navbar */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
@@ -97,7 +69,7 @@ export default function Navbar({ onOpenBooking, onOpenQuiz }) {
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 tracking-wider uppercase font-semibold">
-                Dental Care Cilacap
+                Dental Care 
               </p>
             </div>
           </Link>

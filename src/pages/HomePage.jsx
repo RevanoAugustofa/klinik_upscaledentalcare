@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import WhyUs from '../components/WhyUs';
 import LocationSection from '../components/LocationSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import FaqSection from '../components/FaqSection';
 
 export default function HomePage({ onOpenBooking, onOpenQuiz }) {
   return (
@@ -21,6 +22,8 @@ export default function HomePage({ onOpenBooking, onOpenQuiz }) {
       <WhyUs onOpenBooking={() => onOpenBooking()} />
       <LocationSection onOpenBooking={() => onOpenBooking()} />
       <TestimonialsSection />
+      <FaqSection />
     </div>
   );
 }
+

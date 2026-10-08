@@ -1,8 +1,8 @@
 export const clinicData = {
   name: "Upscale Dental Care Specialist",
   tagline: "Senyum Estetis & Sehat Impian Anda Bersama Dokter Spesialis Terpercaya",
-  city: "Cilacap",
-  address: "Jl. DI Panjaitan No.23, Gobok, Donan, Kec. Cilacap Tengah, Kabupaten Cilacap, Jawa Tengah 53215",
+  city: "Cilacap & Purwokerto",
+  address: "Jl. DI Panjaitan No.23, Donan, Cilacap & Jl. HR Boenyamin No.88, Purwokerto",
   phone: "0811-6469-191",
   whatsappNumber: "628116469191",
   formattedWhatsapp: "+62 811-6469-191",
@@ -17,8 +17,52 @@ export const clinicData = {
     }
   },
   googleRating: 4.9,
-  googleReviewCount: 480,
-  happyPatients: "12,500+",
+  googleReviewCount: 800,
+  happyPatients: "15,000+",
+  branches: [
+    {
+      id: "cilacap",
+      name: "Cabang Cilacap",
+      shortName: "Cilacap",
+      city: "Cilacap",
+      subdistrict: "Cilacap Tengah",
+      address: "Jl. DI Panjaitan No.23, Gobok, Donan, Kec. Cilacap Tengah, Kabupaten Cilacap, Jawa Tengah 53215",
+      phone: "0811-6469-191",
+      whatsappNumber: "628116469191",
+      formattedWhatsapp: "+62 811-6469-191",
+      googleRating: 4.9,
+      googleReviewCount: 480,
+      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.214871923292!2d109.0069!3d-7.7245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDMnMjgyMiJTIDEwOcKwMDAnMjQuOCJF!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid",
+      googleMapsUrl: "https://maps.google.com/?q=Upscale+Dental+Care+Specialist+Cilacap",
+      idAlamatUrl: "https://idalamat.com/alamat/upscale-dental-care-specialist-1060870",
+      operationalHours: [
+        { days: "Senin - Sabtu", hours: "09:00 - 21:00 WIB" },
+        { days: "Minggu & Hari Libur", hours: "10:00 - 17:00 WIB (By Appointment)" }
+      ],
+      landmark: "Pusat kota Cilacap, dekat area Donan dengan parkir luas & nyaman."
+    },
+    {
+      id: "purwokerto",
+      name: "Cabang Purwokerto",
+      shortName: "Purwokerto",
+      city: "Purwokerto",
+      subdistrict: "Purwokerto Utara",
+      address: "Jl. HR Boenyamin No.88, Pabuaran, Kec. Purwokerto Utara, Kabupaten Banyumas, Jawa Tengah 53121",
+      phone: "0811-6469-192",
+      whatsappNumber: "628116469192",
+      formattedWhatsapp: "+62 811-6469-192",
+      googleRating: 4.9,
+      googleReviewCount: 320,
+      mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.273618751433!2d109.2486!3d-7.4012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655e7a9e3b4efd%3A0x1d368d2ad78848b8!2sPurwokerto!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid",
+      googleMapsUrl: "https://maps.google.com/?q=Upscale+Dental+Care+Specialist+Purwokerto",
+      idAlamatUrl: "https://idalamat.com/alamat/upscale-dental-care-specialist-1060870",
+      operationalHours: [
+        { days: "Senin - Sabtu", hours: "09:00 - 21:00 WIB" },
+        { days: "Minggu & Hari Libur", hours: "10:00 - 17:00 WIB (By Appointment)" }
+      ],
+      landmark: "Kawasan strategis HR Boenyamin (UNSOED) Purwokerto Utara dengan VVIP Lounge."
+    }
+  ],
   operationalHours: [
     { days: "Senin - Sabtu", hours: "09:00 - 21:00 WIB" },
     { days: "Minggu & Hari Libur", hours: "10:00 - 17:00 WIB (By Appointment)" }
@@ -305,42 +349,98 @@ export const clinicData = {
   testimonials: [
     {
       id: "r1",
-      name: "Priscillia Maharani",
-      role: "Wiraswasta, Cilacap",
+      branchId: "cilacap",
+      branchName: "Cabang Cilacap",
+      name: "Dyah Sri Utami",
+      role: "Pasien Terverifikasi, Cilacap",
       rating: 5,
-      date: "2 minggu yang lalu",
-      comment: "Pelayanan di Upscale Dental Care benar-benar sekelas VVIP! Dokter spesialisnya super ramah & telaten. Tempatnya harum, bersih banget, dan behel saya dikerjakan dengan rapi tanpa rasa sakit yang berlebih. Highly recommended!",
-      service: "Behel Sapphire Ortodonti",
+      date: "1 minggu yang lalu",
+      comment: "Alhamdulillah pertama kali kesini langsung cocok. Bagian administrasinya sangat ramah, dokter dan perawat nya sabar dan edukatif. Menjelaskan dengan tenang dan tidak membuat takut. InsyaAllah mau bawa anak kesini juga. Sukses selalu team Upscale.",
+      service: "Konsultasi & Perawatan Gigi",
       verified: true
     },
     {
       id: "r2",
+      branchId: "cilacap",
+      branchName: "Cabang Cilacap",
       name: "Hendrik Wijaya",
       role: "Karyawan BUMN, Cilacap Tengah",
       rating: 5,
       date: "1 bulan yang lalu",
-      comment: "Awalnya trauma ke dokter gigi karena dulu sering sakit pas cabut gigi. Tapi pas coba operasi gigi bungsu di Upscale Dental bareng drg. Rian Sp.BMM, biusnya pas banget dan nggak berasa sama sekali! Proses cepat, jam reservasi tepat waktu.",
+      comment: "Awalnya trauma ke dokter gigi karena dulu sering sakit pas cabut gigi. Tapi pas coba operasi gigi bungsu di Upscale Dental Cilacap bareng drg. Rian Sp.BMM, biusnya pas banget dan nggak berasa sama sekali! Proses cepat, jam reservasi tepat waktu.",
       service: "Bedah Gigi Bungsu (Impaksi)",
       verified: true
     },
     {
       id: "r3",
+      branchId: "purwokerto",
+      branchName: "Cabang Purwokerto",
       name: "Maya Angelina",
-      role: "Content Creator, Purwokerto / Cilacap",
+      role: "Content Creator, Purwokerto",
       rating: 5,
       date: "3 minggu yang lalu",
-      comment: "Veneer gigi di sini hasilnya natural banget, nggak tebal kaya gigi kelinci palsu. Temen-temen pada puji senyum saya makin cerah. Terima kasih drg. Budi Sp.KG atas ketelitiannya!",
+      comment: "Veneer gigi di cabang Purwokerto hasilnya natural banget, nggak tebal kaya gigi kelinci palsu. Tempatnya cozy & instagramable di HR Boenyamin. Temen-temen pada puji senyum saya makin cerah. Terima kasih drg. Budi Sp.KG!",
       service: "Porcelain Veneer E-Max",
       verified: true
     },
     {
       id: "r4",
+      branchId: "cilacap",
+      branchName: "Cabang Cilacap",
       name: "Bunda Rini & Arka (6 thn)",
-      role: "Ibu Rumah Tangga, Donan",
+      role: "Ibu Rumah Tangga, Donan Cilacap",
       rating: 5,
       date: "2 bulan yang lalu",
-      comment: "Anak saya biasanya nangis histeris kalau ke klinik gigi. Tapi dokter anak drg. Clara Sp.KGA sangat penyabar dan pinter ngajak ngobrol. Ada tempat mainnya juga. Sekarang Arka malah ketagihan rajin periksa gigi!",
+      comment: "Anak saya biasanya nangis histeris kalau ke klinik gigi. Tapi dokter anak drg. Clara Sp.KGA di cabang Cilacap sangat penyabar dan pinter ngajak ngobrol. Ada tempat mainnya juga. Sekarang Arka malah ketagihan rajin periksa gigi!",
       service: "Klinik Gigi Anak & Tambal Gigi",
+      verified: true
+    },
+    {
+      id: "r5",
+      branchId: "purwokerto",
+      branchName: "Cabang Purwokerto",
+      name: "Dr. Farhan Rizky",
+      role: "Dosen UNSOED, Purwokerto Utara",
+      rating: 5,
+      date: "1 minggu yang lalu",
+      comment: "Treatment Bleaching Laser di cabang Purwokerto sangat memuaskan. Dalam 45 menit gigi langsung kelihatan jauh lebih bersih dan cerah alami tanpa rasa ngilu. Parkiran luas dan pelayanan kasir sangat cepat.",
+      service: "Teeth Whitening Express",
+      verified: true
+    },
+    {
+      id: "r6",
+      branchId: "purwokerto",
+      branchName: "Cabang Purwokerto",
+      name: "Amanda Putri",
+      role: "Mahasiswi, Purwokerto",
+      rating: 5,
+      date: "2 minggu yang lalu",
+      comment: "Seneng banget Upscale buka cabang di Purwokerto! Pemasangan Behel Estetis sama drg. Amanda Sp.Ort rapi banget. Fasilitas ruang tunggunya kaya cafe bintang lima, dapet free coffee & Wi-Fi cepat.",
+      service: "Behel Ceramic Aesthetic",
+      verified: true
+    },
+    {
+      id: "r7",
+      branchId: "cilacap",
+      branchName: "Cabang Cilacap",
+      name: "Aditia Pratama",
+      role: "Pengusaha, Kroya Cilacap",
+      rating: 5,
+      date: "3 minggu yang lalu",
+      comment: "Pemasangan implan gigi titanium di Cilacap berjalan lancar. Kliniknya canggih ada 3D CBCT scan. Tidak perlu jauh-jauh lagi keluar kota untuk perawatan spesialis bedah mulut.",
+      service: "Dental Implant Titanium",
+      verified: true
+    },
+    {
+      id: "r8",
+      branchId: "purwokerto",
+      branchName: "Cabang Purwokerto",
+      name: "Rizky Ramadhan",
+      role: "Arsitek, Purwokerto Timur",
+      rating: 5,
+      date: "1 bulan yang lalu",
+      comment: "Pembersihan karang gigi scaling & tambal komposit sangat halus dan presisi. Penjelasan dokternya komprehensif pakai intraoral camera jadi paham persis kondisi gigi.",
+      service: "Scaling & Tambal Estetis",
       verified: true
     }
   ],

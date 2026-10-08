@@ -8,7 +8,7 @@ export default function PromosPage({ onOpenBooking }) {
       <SEO 
         title="Promo Perawatan Gigi Spesial | Upscale Dental Care Cilacap"
         description="Dapatkan diskon promo spesial perawatan behel ortodonti, paket bleaching gigi laser, scaling karang gigi, & konsultasi dokter di Upscale Dental Care Cilacap."
-        canonical="/promos"
+        canonical="/services/promos"
         keywords="promo behel cilacap, diskon dokter gigi cilacap, paket scaling gigi cilacap"
       />
       <PromosSection onOpenBooking={onOpenBooking} />

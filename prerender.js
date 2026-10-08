@@ -13,7 +13,9 @@ const routesToPrerender = [
   '/services',
   '/doctors',
   '/gallery',
-  '/promos'
+  '/services/promos',
+  '/cabang-cilacap',
+  '/cabang-purwokerto'
 ];
 
 async function generateSSG() {

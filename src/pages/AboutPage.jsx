@@ -1,7 +1,6 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import { Sparkles, ShieldCheck, Award, MapPin, Users, HeartHandshake, Calendar, CheckCircle2, Clock } from 'lucide-react';
-import FaqSection from '../components/FaqSection';
 import { clinicData } from '../data/clinicData';
 
 export default function AboutPage({ onOpenBooking }) {
@@ -106,10 +105,7 @@ export default function AboutPage({ onOpenBooking }) {
 
         </div>
       </section>
-
-      {/* Embedded FAQ Section */}
-      <FaqSection />
-
     </div>
   );
 }
+

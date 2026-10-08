@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calendar, User, Phone, CheckCircle2, Send, ShieldCheck } from 'lucide-react';
+import { X, Calendar, User, Phone, CheckCircle2, Send, ShieldCheck, MapPin } from 'lucide-react';
 import { clinicData } from '../data/clinicData';
 
-export default function BookingModal({ isOpen, onClose, initialServiceId, initialDoctorId, initialPromoCode }) {
+export default function BookingModal({ isOpen, onClose, initialServiceId, initialDoctorId, initialPromoCode, initialBranchId }) {
+  const branches = clinicData.branches || [
+    { id: 'cilacap', name: 'Cabang Cilacap' },
+    { id: 'purwokerto', name: 'Cabang Purwokerto' }
+  ];
+
   const [formData, setFormData] = useState({
+    branchId: initialBranchId || branches[0].id,
     serviceId: initialServiceId || clinicData.services[0].id,
     doctorId: initialDoctorId || clinicData.doctors[0].id,
     date: new Date().toISOString().split('T')[0],
@@ -17,13 +23,15 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
   const [bookingSuccess, setBookingSuccess] = useState(null);
 
   useEffect(() => {
+    if (initialBranchId) setFormData(prev => ({ ...prev, branchId: initialBranchId }));
     if (initialServiceId) setFormData(prev => ({ ...prev, serviceId: initialServiceId }));
     if (initialDoctorId) setFormData(prev => ({ ...prev, doctorId: initialDoctorId }));
     if (initialPromoCode) setFormData(prev => ({ ...prev, promoCode: initialPromoCode }));
-  }, [initialServiceId, initialDoctorId, initialPromoCode]);
+  }, [initialBranchId, initialServiceId, initialDoctorId, initialPromoCode]);
 
   if (!isOpen) return null;
 
+  const selectedBranch = branches.find(b => b.id === formData.branchId) || branches[0];
   const selectedService = clinicData.services.find(s => s.id === formData.serviceId) || clinicData.services[0];
   const selectedDoctor = clinicData.doctors.find(d => d.id === formData.doctorId) || clinicData.doctors[0];
 
@@ -39,6 +47,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
     const reservationData = {
       bookingCode,
       ...formData,
+      branchName: selectedBranch.name,
       serviceName: selectedService.title,
       doctorName: selectedDoctor.name,
       createdAt: new Date().toLocaleString('id-ID')
@@ -52,8 +61,9 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
 
   const getWhatsappUrl = () => {
     if (!bookingSuccess) return '#';
-    const text = `Halo Admin Upscale Dental Care Specialist Cilacap,%0A%0ASaya ingin mengonfirmasi Janji Temu Online:%0A%0A📌 *Kode Booking:* ${bookingSuccess.bookingCode}%0A👤 *Nama:* ${bookingSuccess.name}%0A📞 *No WA:* ${bookingSuccess.phone}%0A🦷 *Layanan:* ${bookingSuccess.serviceName}%0A👨‍⚕️ *Dokter Spesialis:* ${bookingSuccess.doctorName}%0A📅 *Tanggal:* ${bookingSuccess.date}%0A⏰ *Jam:* ${bookingSuccess.timeSlot}%0A` + (bookingSuccess.promoCode ? `🎁 *Promo Code:* ${bookingSuccess.promoCode}%0A` : '') + (bookingSuccess.complaint ? `📝 *Keluhan:* ${bookingSuccess.complaint}%0A` : '') + `%0AMohon konfirmasi ketersediaan jadwal. Terima kasih!`;
-    return `https://wa.me/${clinicData.whatsappNumber}?text=${text}`;
+    const branchWa = selectedBranch.whatsappNumber || clinicData.whatsappNumber;
+    const text = `Halo Admin Upscale Dental Care Specialist (${encodeURIComponent(bookingSuccess.branchName)}),%0A%0ASaya ingin mengonfirmasi Janji Temu Online:%0A%0A📌 *Kode Booking:* ${bookingSuccess.bookingCode}%0A📍 *Cabang Klinik:* ${bookingSuccess.branchName}%0A👤 *Nama:* ${bookingSuccess.name}%0A📞 *No WA:* ${bookingSuccess.phone}%0A🦷 *Layanan:* ${bookingSuccess.serviceName}%0A👨‍⚕️ *Dokter Spesialis:* ${bookingSuccess.doctorName}%0A📅 *Tanggal:* ${bookingSuccess.date}%0A⏰ *Jam:* ${bookingSuccess.timeSlot}%0A` + (bookingSuccess.promoCode ? `🎁 *Promo Code:* ${bookingSuccess.promoCode}%0A` : '') + (bookingSuccess.complaint ? `📝 *Keluhan:* ${bookingSuccess.complaint}%0A` : '') + `%0AMohon konfirmasi ketersediaan jadwal. Terima kasih!`;
+    return `https://wa.me/${branchWa}?text=${text}`;
   };
 
   return (
@@ -80,7 +90,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
           </div>
           <div>
             <h3 className="text-xl font-extrabold text-slate-900">Form Reservasi Dokter Gigi Online</h3>
-            <p className="text-xs text-slate-500">Upscale Dental Care Specialist • Cilacap</p>
+            <p className="text-xs text-slate-500">Upscale Dental Care Specialist • Cilacap &amp; Purwokerto</p>
           </div>
         </div>
 
@@ -102,6 +112,10 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
             </div>
 
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-2">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Cabang Klinik:</span>
+                <span className="font-bold text-teal-800">{bookingSuccess.branchName}</span>
+              </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Nama Pasien:</span>
                 <span className="font-bold text-slate-900">{bookingSuccess.name}</span>
@@ -138,7 +152,7 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
                 }}
                 className="w-full py-2.5 text-xs text-slate-500 hover:text-slate-900"
               >
-                Selesai & Tutup
+                Selesai &amp; Tutup
               </button>
             </div>
           </div>
@@ -146,6 +160,23 @@ export default function BookingModal({ isOpen, onClose, initialServiceId, initia
           /* Form View */
           <form onSubmit={handleSubmit} className="space-y-4">
             
+            {/* Branch Selection */}
+            <div>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Pilih Cabang Klinik:</label>
+              <div className="relative">
+                <MapPin className="w-4 h-4 text-teal-600 absolute left-3 top-3 pointer-events-none" />
+                <select
+                  value={formData.branchId}
+                  onChange={(e) => setFormData({ ...formData, branchId: e.target.value })}
+                  className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 font-bold focus:border-teal-500 focus:outline-none"
+                >
+                  {branches.map(b => (
+                    <option key={b.id} value={b.id}>{b.name} - {b.subdistrict || b.city}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             {/* Service & Doctor Select Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>

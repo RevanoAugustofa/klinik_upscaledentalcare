@@ -38,7 +38,9 @@ export default function Footer({ onOpenBooking }) {
               <li><Link to="/services" className="hover:text-teal-300 transition-colors">Layanan</Link></li>
               <li><Link to="/doctors" className="hover:text-teal-300 transition-colors">Dokter Tim</Link></li>
               <li><Link to="/gallery" className="hover:text-teal-300 transition-colors">Before &amp; After</Link></li>
-              <li><Link to="/promos" className="hover:text-teal-300 transition-colors">Promo Terbaru</Link></li>
+              <li><Link to="/services/promos" className="hover:text-teal-300 transition-colors">Promo Terbaru</Link></li>
+              <li><Link to="/cabang-cilacap" className="hover:text-teal-300 transition-colors">Cabang Cilacap</Link></li>
+              <li><Link to="/cabang-purwokerto" className="hover:text-teal-300 transition-colors">Cabang Purwokerto</Link></li>
             </ul>
           </div>
 

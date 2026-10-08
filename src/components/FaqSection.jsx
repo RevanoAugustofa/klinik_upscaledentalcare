@@ -26,17 +26,7 @@ export default function FaqSection() {
           </p> */}
         </div>
 
-        {/* Search Bar */}
-        <div className="relative mb-8">
-          <Search className="w-4 h-4 text-slate-400 absolute left-4 top-3.5" />
-          <input
-            type="text"
-            placeholder="Cari pertanyaan... (contoh: behel, cicilan, lokasi, sakit)"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-xs text-slate-900 placeholder-slate-400 focus:border-teal-500 focus:outline-none shadow-md"
-          />
-        </div>
+        
 
         {/* Accordion List */}
         <div className="space-y-3 text-left">
